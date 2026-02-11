@@ -21,6 +21,10 @@ O projeto foi estrategicamente dividido em duas versões para demonstrar a evolu
 
 Nota: Por questões de segurança e boas práticas de FinOps, a infraestrutura foi totalmente destruída via Terraform após a coleta das evidências, invalidando o IP público exposto nos logs e capturas de tela.
 
+## 🎓 Créditos e Agradecimentos
+
+Este projeto foi desenvolvido como parte do **Bootcamp da Escola Atlântico Avanti**.
+
 * **Orientação:** Professor Thiago (Zozô) Augusto Ozores
 * **Instituição:** Escola Atlântico Avanti.
 * **Curso:** Devops
