@@ -21,6 +21,23 @@ O projeto foi estrategicamente dividido em duas versões para demonstrar a evolu
 
 Nota: Por questões de segurança e boas práticas de FinOps, a infraestrutura foi totalmente destruída via Terraform após a coleta das evidências, invalidando o IP público exposto nos logs e capturas de tela.
 
+## 📸 Evidências do Projeto
+
+Abaixo estão as capturas de tela que comprovam a execução bem-sucedida de todas as etapas do desafio:
+
+### 1. Configuração com Ansible
+![Sucesso do Ansible](./prints-evidencias/01-ansible-sucesso.png)
+
+### 2. Provisionamento com Terraform
+![Terraform Apply](./prints-evidencias/02-terraform-apply.png)
+![Terraform Init](./prints-evidencias/03-terraform-init.png)
+
+### 3. Resultado Final
+![Site Online](./prints-evidencias/04-site-no-ar.png)
+
+### 4. Encerramento (FinOps)
+![Terraform Destroy](./prints-evidencias/05-terraform-destroy.png)
+
 ## 🎓 Créditos e Agradecimentos
 
 Este projeto foi desenvolvido como parte do **Bootcamp da Escola Atlântico Avanti**.
