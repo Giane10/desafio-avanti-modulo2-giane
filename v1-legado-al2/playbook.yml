@@ -1,0 +1,36 @@
+---
+- name: Configurar Servidor Web Avanti
+  hosts: all
+  become: yes
+  tasks:
+    - name: Atualizar pacotes
+      yum:
+        name: '*'
+        state: latest
+
+    - name: Instalar Git (Pacote Comum)
+      yum:
+        name: git
+        state: present
+
+    - name: Instalar Nginx (Pacote Extra)
+      command: amazon-linux-extras install -y nginx1
+      args:
+        creates: /usr/sbin/nginx # Evita reinstalar se já existir
+
+    - name: Iniciar Nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Limpar pasta do Nginx (Garante pasta vazia para o Git)
+      file:
+        path: /usr/share/nginx/html/
+        state: absent
+
+    - name: Deploy do Site (Clone do GitHub)
+      git:
+        repo: 'https://github.com/avanti-dvp/site-exemplo-aws.git'
+        dest: '/usr/share/nginx/html/'
+        force: yes

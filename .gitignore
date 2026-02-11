@@ -1,0 +1,21 @@
+# --- Terraform ---
+# Ignora a pasta de plugins 
+.terraform/
+
+# Ignora o arquivo de trava de versão
+.terraform.lock.hcl
+
+# Ignora o estado da infraestrutura (contém dados sensíveis)
+*.tfstate
+*.tfstate.*
+
+# --- Segurança (CRÍTICO) ---
+# Ignora sua chave privada que vimos no explorador de arquivos
+*.pem
+ec2-instance-key.pem
+
+# --- Ansible ---
+.ansible/
+
+# --- Outros ---
+.DS_Store
