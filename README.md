@@ -29,8 +29,10 @@ Abaixo estão as capturas de tela que comprovam a execução bem-sucedida de tod
 ![Sucesso do Ansible](./prints-evidencias/01-ansible-sucesso.png)
 
 ### 2. Provisionamento com Terraform
-![Terraform Apply](./prints-evidencias/02-terraform-apply.png)
 ![Terraform Init](./prints-evidencias/03-terraform-init.png)
+
+![Terraform Apply](./prints-evidencias/02-terraform-apply.png)
+
 
 ### 3. Resultado Final
 ![Site Online](./prints-evidencias/04-site-no-ar.png)
