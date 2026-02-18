@@ -30,6 +30,18 @@ graph TD
     Internet((Internet)) -->|Acesso Web| SG_HTTP
 ```
 
+## 🚀 Como Executar o Projeto
+
+1. **Provisionamento (Terraform):**
+   - Acesse a pasta da versão desejada (`v1-legado-al2` ou `v2-moderno-al2023`).
+   - Execute `terraform init` e `terraform apply -auto-approve`.
+   - O Terraform gerará o IP público da instância e a chave `.pem`.
+
+2. **Configuração (Ansible):**
+   - Garanta que a chave privada tenha as permissões corretas no seu Linux/WSL: `chmod 400 chave.pem`.
+   - Execute o playbook: `ansible-playbook -i inventory.ini playbook.yml`.
+
+
 ## 📂 Estrutura do Repositório
 
 O projeto foi estrategicamente dividido em duas versões para demonstrar a evolução técnica e a capacidade de resolução de problemas (troubleshooting):
