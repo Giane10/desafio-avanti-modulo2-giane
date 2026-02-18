@@ -2,16 +2,16 @@
 
 Este repositório contém o projeto de automação para o provisionamento e configuração de um servidor web na Amazon Web Services (AWS). O desafio demonstra o uso de Infraestrutura como Código (IaC) e gestão de configuração automatizada.
 
-```
+```mermaid
 graph TD
-    subgraph Local["Máquina Local"]
+    subgraph Local["Máquina Local (WSL)"]
         TF[Terraform] -->|Provisiona| AWS
         AN[Ansible] -->|Configura| EC2
     end
 
     subgraph Nuvem["Nuvem AWS"]
         direction TB
-        subgraph Rede["Rede e Segurança"]
+        subgraph Rede["Segurança"]
             EC2["Instância EC2 (AL2)"]
             SG_SSH["Porta 22 (SSH)"]
             SG_HTTP["Porta 80 (HTTP)"]
@@ -19,8 +19,8 @@ graph TD
             EC2 --- SG_HTTP
         end
         
-        subgraph App["Aplicação"]
-            NGINX["Servidor Nginx"]
+        subgraph App["Servidor Web"]
+            NGINX["Nginx"]
             GIT["Deploy via Git"]
             NGINX --- GIT
         end
@@ -28,7 +28,7 @@ graph TD
 
     EC2 --> NGINX
     Internet((Internet)) -->|Acesso Web| SG_HTTP
-    ```
+```
 
 ## 📂 Estrutura do Repositório
 
