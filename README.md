@@ -2,6 +2,7 @@
 
 Este repositório contém o projeto de automação para o provisionamento e configuração de um servidor web na Amazon Web Services (AWS). O desafio demonstra o uso de Infraestrutura como Código (IaC) e gestão de configuração automatizada.
 
+```mermaid
 graph TD
     subgraph "Sua Máquina Local (WSL/Ubuntu)"
         TF[Terraform] -->|Provisiona| AWS
