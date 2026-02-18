@@ -28,7 +28,7 @@ graph TD
     end
 
     EC2 --> NGINX
-    Internet((Usuário/Web)) -->|Acesso Porta 80| SG_HTTP
+    Internet((Usuário/Web)) -->|Acesso Porta 80| SG_HTTP ```
 
 ## 📂 Estrutura do Repositório
 
