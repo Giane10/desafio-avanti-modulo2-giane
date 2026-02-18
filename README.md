@@ -2,6 +2,33 @@
 
 Este repositório contém o projeto de automação para o provisionamento e configuração de um servidor web na Amazon Web Services (AWS). O desafio demonstra o uso de Infraestrutura como Código (IaC) e gestão de configuração automatizada.
 
+graph TD
+    subgraph "Sua Máquina Local (WSL/Ubuntu)"
+        TF[Terraform] -->|Provisiona| AWS
+        AN[Ansible] -->|Configura via SSH| EC2
+    end
+
+    subgraph "Nuvem AWS"
+        direction TB
+        subgraph "VPC / Subnet Pública"
+            EC2["Instância EC2 (Amazon Linux 2)"]
+            SG_SSH["SG: Porta 22 (SSH)"]
+            SG_HTTP["SG: Porta 80 (HTTP)"]
+            
+            EC2 --- SG_SSH
+            EC2 --- SG_HTTP
+        end
+        
+        subgraph "Software Stack"
+            NGINX["Servidor Nginx"]
+            GIT["Repositório Git (Site)"]
+            NGINX --- GIT
+        end
+    end
+
+    EC2 --> NGINX
+    Internet((Usuário/Web)) -->|Acesso Porta 80| SG_HTTP
+
 ## 📂 Estrutura do Repositório
 
 O projeto foi estrategicamente dividido em duas versões para demonstrar a evolução técnica e a capacidade de resolução de problemas (troubleshooting):
